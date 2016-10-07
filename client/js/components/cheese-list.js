@@ -2,22 +2,37 @@ var React = require("react");
 var ReactDOM = require("react-dom");
 
 
+const CheeseList = (props) => {
+    console.log(props.cheeses);
 
-var CheeseList = React.createClass({
-    render: function(props){
-        //var doubles = numbers.map(function(num) {
-        //return num * 2;
-        var cheese = this.props.cheeses.map(function(cheese){
-            return cheese
-        });
-        console.log(cheese);
-        return (
-            <ul>
-                <li>{this.cheese}</li>
+    return (
+                    <ul>
+                    {
+                       props.cheeses.map((cheeses) =>{
+                           return  <li key={cheeses}>{cheeses}</li>
+                       })
+                    }
+               
             </ul>
-            )
-    }
-});
+        );
+};
 
-exports.CheeseList = CheeseList;
+// var CheeseList = function(props){
+//         //var doubles = numbers.map(function(num) {
+//         //return num * 2;
+//         console.log(props)
+//     //     var cheeselist = this.props.cheeses.map(function(cheese){
+//     //          var cheese=cheese;
+//     //          return cheese;
+//     //     });
+       
+//         return ( 
+//             <ul>
+//                 <li>ghjfg</li>
+//             </ul>
+//             )
+//      }
+
+
+export default CheeseList;
 
