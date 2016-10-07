@@ -12,13 +12,13 @@ describe('Cheese List', function() {
         chai.request(app)
         .get('/cheeses')
         .end(function(err, res) {
-            console.log(res.body);
+            console.log(res);
             res.should.have.status(200);
             res.body.should.be.array;
             res.body.length.should.equal(17);
             
-            // res.should.be.a('object');
-            // res.should.have.property('type');
+             res.should.be.a('object');
+             res.should.have.property('type');
             done();
         });
     });
